@@ -1,0 +1,59 @@
+server:
+  port: 4001
+
+spring:
+  application:
+    name: snail-config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+
+# 关闭安全管理
+management:
+  security:
+    enabled: false
+endpoints:
+  health:
+    sensitive: false
+#---
+#spring:
+#  profiles: dev
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 5
+#    lease-expiration-duration-in-seconds: 20
+#  client:
+#    serviceUrl:
+#      defaultZone: http://snail:password@localhost:8000/eureka
+#    registry-fetch-interval-seconds: 10
+---
+#spring:
+#  profiles: prd
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5682
+#    username: guest
+#    password: guest
+#  cloud:
+#    config:
+#      retry:
+#        initial-interval: 3000
+#        multiplier: 1.5
+#        max-interval: 20000
+#        max-attempts: 6
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://snail:password@localhost:8000/eureka
