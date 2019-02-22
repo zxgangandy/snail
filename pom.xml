@@ -87,8 +87,8 @@
 
     <modules>
         <module>snail-common</module>
+        <module>snail-services</module>
         <module>snail-modules</module>
-        <module>snail-sm</module>
     </modules>
 
     <dependencyManagement>

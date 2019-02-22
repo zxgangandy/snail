@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.snail</groupId>
-    <artifactId>snail-sso-client-demo</artifactId>
+    <artifactId>snail-config</artifactId>
     <version>1.3.1</version>
     <packaging>jar</packaging>
 
-    <name>snail-sso-client-demo</name>
-    <description>单点登录客户端</description>
+    <name>snail-config</name>
+    <description>配置中心</description>
 
     <parent>
         <groupId>com.github.snail</groupId>
@@ -20,19 +19,19 @@
     </parent>
 
     <dependencies>
+        <!--配置中心服务-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+
+        <!--消息总线-->
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>
